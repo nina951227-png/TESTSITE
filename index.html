@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>塑膠材料應用工程師 初級刷題</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="home" class="wrap">
+  <h1>塑膠材料應用工程師・初級</h1>
+  <section class="card"><h3>選擇考科</h3>
+    <label><input type="radio" name="s" value="1"> 考科一：高分子化性與物性</label>
+    <label><input type="radio" name="s" value="2" checked> 考科二：高分子材料特性與加工概論</label>
+    <p class="sub" id="info"></p></section>
+  <section class="card"><h3>題數</h3>
+    <label><input type="radio" name="n" value="50" checked> 50 題隨機</label>
+    <label><input type="radio" name="n" value="all"> 全部 <span id="allcnt"></span> 題依序</label></section>
+  <section class="card"><h3>作答模式</h3>
+    <label><input type="radio" name="m" value="one" checked> 逐題模式（一次一題）</label>
+    <label><input type="radio" name="m" value="all"> 整份考卷（答完交卷看答案）</label>
+    <label class="sub"><input type="checkbox" id="ins" checked> 逐題模式：選完立刻顯示對錯</label></section>
+  <button class="btn big" id="go">開始作答</button>
+  <button class="btn alt big" id="resume" hidden>繼續上次</button>
+</div>
+
+<div id="quiz" hidden>
+  <div class="top"><b id="prog"></b><span id="tm">00:00</span>
+    <span class="sp"></span>
+    <button class="btn alt sm" id="cardbtn">答題卡</button>
+    <button class="btn sm" onclick="submit()">交卷</button></div>
+  <div class="lay"><main id="qa"></main>
+    <aside id="side"><h4>答題卡</h4><div id="grid"></div>
+      <p class="lg"><i class="g a"></i>已答 <i class="g f"></i>標記 <i class="g"></i>未答</p>
+      <button class="btn" onclick="submit()">交卷</button></aside></div>
+</div>
+
+<div id="result" class="wrap" hidden>
+  <div class="card" id="sum"></div>
+  <div class="flt"><button class="btn alt sm" onclick="result('all')">全部</button>
+    <button class="btn alt sm" onclick="result('wrong')">只看錯題</button>
+    <button class="btn alt sm" onclick="result('flag')">只看標記</button></div>
+  <div id="rv"></div>
+  <button class="btn" onclick="retry()">重做錯題</button>
+  <button class="btn alt" onclick="home()">回首頁</button>
+</div>
+<script src="questions1.js"></script>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
